@@ -228,6 +228,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -859,6 +860,13 @@ require('lazy').setup({
     },
   },
 })
+
+-- FUGITIVE
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+vim.keymap.set('n', 'gh', '<cmd>diffget //2<CR>')
+vim.keymap.set('n', 'gl', '<cmd>diffget //3<CR>')
+
+vim.keymap.set('n', '<F3>', "<cmd>r !date '+\\%d-\\%m-\\%Y \\%H:\\%M'<CR>")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
