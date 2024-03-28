@@ -159,8 +159,15 @@ vim.opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+-- Remove search highlight
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Open netrw explore
 vim.keymap.set('n', '<leader>x', '<cmd>Explore<CR>')
+
+-- Toggle between absolute/relative line numbers
+vim.keymap.set('n', '<leader>l', '<cmd>set rnu!<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
